@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customers_requests",
+  "info": {
+    "singularName": "customers-request",
+    "pluralName": "customers-requests",
+    "displayName": "customers-request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "request": {
+      "type": "text",
+      "required": true
+    },
+    "note": {
+      "type": "richtext",
+      "private": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "New",
+        "Pending",
+        "Closed"
+      ],
+      "default": "New"
+    }
+  }
+}

@@ -677,6 +677,44 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiCustomersRequestCustomersRequest
+  extends Schema.CollectionType {
+  collectionName: 'customers_requests';
+  info: {
+    singularName: 'customers-request';
+    pluralName: 'customers-requests';
+    displayName: 'customers-request';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    phone: Attribute.String & Attribute.Required;
+    request: Attribute.Text & Attribute.Required;
+    note: Attribute.RichText & Attribute.Private;
+    status: Attribute.Enumeration<['New', 'Pending', 'Closed']> &
+      Attribute.DefaultTo<'New'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::customers-request.customers-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::customers-request.customers-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSupercarSupercar extends Schema.CollectionType {
   collectionName: 'supercars';
   info: {
@@ -884,6 +922,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::customers-request.customers-request': ApiCustomersRequestCustomersRequest;
       'api::supercar.supercar': ApiSupercarSupercar;
       'api::supercar-request.supercar-request': ApiSupercarRequestSupercarRequest;
       'api::transport-price.transport-price': ApiTransportPriceTransportPrice;
