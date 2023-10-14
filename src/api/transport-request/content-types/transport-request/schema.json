@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transport_requests",
+  "info": {
+    "singularName": "transport-request",
+    "pluralName": "transport-requests",
+    "displayName": "transport-request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "pickupdate": {
+      "required": true,
+      "type": "datetime"
+    },
+    "dropoffdate": {
+      "required": true,
+      "type": "datetime"
+    },
+    "pickupaddress": {
+      "type": "string",
+      "required": true
+    },
+    "dropoffaddress": {
+      "type": "string",
+      "required": true
+    },
+    "numberofpeople": {
+      "type": "integer",
+      "required": true
+    },
+    "luggages": {
+      "type": "integer",
+      "required": true
+    },
+    "flightnumber": {
+      "type": "string",
+      "required": true
+    },
+    "otherrequest": {
+      "type": "string"
+    },
+    "payment": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Paid"
+      ],
+      "default": "Pending"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "New",
+        "Pending",
+        "Confirmed"
+      ],
+      "default": "New"
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "transporttype": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

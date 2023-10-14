@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transport_prices",
+  "info": {
+    "singularName": "transport-price",
+    "pluralName": "transport-prices",
+    "displayName": "transport price",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PricingOptions": {
+      "type": "json"
+    },
+    "ExtraPricing": {
+      "type": "json"
+    },
+    "vehicle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
