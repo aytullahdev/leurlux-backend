@@ -75,6 +75,10 @@
     "transporttype": {
       "type": "string",
       "required": true
+    },
+    "payment_id": {
+      "type": "string",
+      "unique": true
     }
   }
 }
