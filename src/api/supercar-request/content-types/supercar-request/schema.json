@@ -16,10 +16,6 @@
       "type": "string",
       "required": true
     },
-    "price": {
-      "type": "integer",
-      "required": true
-    },
     "pickupdate": {
       "required": true,
       "type": "datetime"
@@ -64,6 +60,10 @@
         "Paid"
       ],
       "default": "Pending"
+    },
+    "price": {
+      "type": "string",
+      "required": true
     }
   }
 }

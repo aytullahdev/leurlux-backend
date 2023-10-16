@@ -747,6 +747,37 @@ export interface ApiSupercarSupercar extends Schema.CollectionType {
   };
 }
 
+export interface ApiSupercarCollectionSupercarCollection
+  extends Schema.SingleType {
+  collectionName: 'supercar_collections';
+  info: {
+    singularName: 'supercar-collection';
+    pluralName: 'supercar-collections';
+    displayName: 'supercarCollection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cars: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::supercar-collection.supercar-collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::supercar-collection.supercar-collection',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSupercarRequestSupercarRequest
   extends Schema.CollectionType {
   collectionName: 'supercar_requests';
@@ -761,7 +792,6 @@ export interface ApiSupercarRequestSupercarRequest
   };
   attributes: {
     carname: Attribute.String & Attribute.Required;
-    price: Attribute.Integer & Attribute.Required;
     pickupdate: Attribute.DateTime & Attribute.Required;
     dropoffdate: Attribute.DateTime & Attribute.Required;
     pickupaddress: Attribute.String & Attribute.Required;
@@ -773,6 +803,7 @@ export interface ApiSupercarRequestSupercarRequest
     note: Attribute.RichText & Attribute.Private;
     payment: Attribute.Enumeration<['Pending', 'Paid']> &
       Attribute.DefaultTo<'Pending'>;
+    price: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -925,6 +956,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::customers-request.customers-request': ApiCustomersRequestCustomersRequest;
       'api::supercar.supercar': ApiSupercarSupercar;
+      'api::supercar-collection.supercar-collection': ApiSupercarCollectionSupercarCollection;
       'api::supercar-request.supercar-request': ApiSupercarRequestSupercarRequest;
       'api::transport-price.transport-price': ApiTransportPriceTransportPrice;
       'api::transport-request.transport-request': ApiTransportRequestTransportRequest;

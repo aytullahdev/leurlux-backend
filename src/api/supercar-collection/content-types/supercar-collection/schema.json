@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "supercar_collections",
+  "info": {
+    "singularName": "supercar-collection",
+    "pluralName": "supercar-collections",
+    "displayName": "supercarCollection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cars": {
+      "type": "json"
+    }
+  }
+}

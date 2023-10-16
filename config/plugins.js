@@ -7,8 +7,8 @@ module.exports = ({ env }) => ({
                 apiKey: env('SENDGRID_API_KEY'),
             },
             settings: {
-                defaultFrom: 'ayat@liberate-labs.com',
-                defaultReplyTo: 'ayat@liberate-labs.com',
+                defaultFrom: env('EMAIL_SEND_FROM'),
+                defaultReplyTo: env('EMAIL_SEND_REPALY_TO'),
             },
         },
     },
