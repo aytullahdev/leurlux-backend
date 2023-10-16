@@ -4,7 +4,6 @@ module.exports = {
         try {
             await strapi.plugins['email'].services.email.send({
                 to: 'ayat@liberate-labs.com',
-                from: 'ayat@liberate-labs.com',
                 subject: 'You have new Transport request',
                 text: `New Transport Request
                 Email: ${result.email}

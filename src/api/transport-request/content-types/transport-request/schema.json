@@ -4,11 +4,11 @@
   "info": {
     "singularName": "transport-request",
     "pluralName": "transport-requests",
-    "displayName": "transport-request",
+    "displayName": "Transport Request",
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {

@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "private_aircraft_requests",
+  "info": {
+    "singularName": "private-aircraft-request",
+    "pluralName": "private-aircraft-requests",
+    "displayName": "Private Aircraft Request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "flyfrom": {
+      "type": "string",
+      "required": true
+    },
+    "flyto": {
+      "type": "string",
+      "required": true
+    },
+    "flydate": {
+      "required": true,
+      "type": "datetime"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "passengers": {
+      "type": "integer",
+      "required": true
+    },
+    "otherdetails": {
+      "type": "text"
+    }
+  }
+}

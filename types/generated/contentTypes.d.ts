@@ -683,11 +683,11 @@ export interface ApiCustomersRequestCustomersRequest
   info: {
     singularName: 'customers-request';
     pluralName: 'customers-requests';
-    displayName: 'customers-request';
+    displayName: 'Customers request';
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
@@ -699,7 +699,6 @@ export interface ApiCustomersRequestCustomersRequest
       Attribute.DefaultTo<'New'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::customers-request.customers-request',
       'oneToOne',
@@ -715,31 +714,37 @@ export interface ApiCustomersRequestCustomersRequest
   };
 }
 
-export interface ApiSupercarSupercar extends Schema.CollectionType {
-  collectionName: 'supercars';
+export interface ApiPrivateAircraftRequestPrivateAircraftRequest
+  extends Schema.CollectionType {
+  collectionName: 'private_aircraft_requests';
   info: {
-    singularName: 'supercar';
-    pluralName: 'supercars';
-    displayName: 'supercar';
+    singularName: 'private-aircraft-request';
+    pluralName: 'private-aircraft-requests';
+    displayName: 'Private Aircraft Request';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
-    carname: Attribute.String & Attribute.Required;
-    price: Attribute.Integer & Attribute.Required;
-    img: Attribute.Media & Attribute.Required;
+    flyfrom: Attribute.String & Attribute.Required;
+    flyto: Attribute.String & Attribute.Required;
+    flydate: Attribute.DateTime & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    phone: Attribute.String & Attribute.Required;
+    passengers: Attribute.Integer & Attribute.Required;
+    otherdetails: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::supercar.supercar',
+      'api::private-aircraft-request.private-aircraft-request',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::supercar.supercar',
+      'api::private-aircraft-request.private-aircraft-request',
       'oneToOne',
       'admin::user'
     > &
@@ -784,11 +789,11 @@ export interface ApiSupercarRequestSupercarRequest
   info: {
     singularName: 'supercar-request';
     pluralName: 'supercar-requests';
-    displayName: 'supercar-request';
+    displayName: 'Supercar Request';
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     carname: Attribute.String & Attribute.Required;
@@ -804,9 +809,9 @@ export interface ApiSupercarRequestSupercarRequest
     payment: Attribute.Enumeration<['Pending', 'Paid']> &
       Attribute.DefaultTo<'Pending'>;
     price: Attribute.String & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::supercar-request.supercar-request',
       'oneToOne',
@@ -861,11 +866,11 @@ export interface ApiTransportRequestTransportRequest
   info: {
     singularName: 'transport-request';
     pluralName: 'transport-requests';
-    displayName: 'transport-request';
+    displayName: 'Transport Request';
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
@@ -887,7 +892,6 @@ export interface ApiTransportRequestTransportRequest
     payment_id: Attribute.String & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::transport-request.transport-request',
       'oneToOne',
@@ -896,41 +900,6 @@ export interface ApiTransportRequestTransportRequest
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::transport-request.transport-request',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiVillaVilla extends Schema.CollectionType {
-  collectionName: 'villas';
-  info: {
-    singularName: 'villa';
-    pluralName: 'villas';
-    displayName: 'villa';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    price: Attribute.Integer & Attribute.Required;
-    images: Attribute.Media;
-    details: Attribute.Text;
-    specifications: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::villa.villa',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::villa.villa',
       'oneToOne',
       'admin::user'
     > &
@@ -955,12 +924,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::customers-request.customers-request': ApiCustomersRequestCustomersRequest;
-      'api::supercar.supercar': ApiSupercarSupercar;
+      'api::private-aircraft-request.private-aircraft-request': ApiPrivateAircraftRequestPrivateAircraftRequest;
       'api::supercar-collection.supercar-collection': ApiSupercarCollectionSupercarCollection;
       'api::supercar-request.supercar-request': ApiSupercarRequestSupercarRequest;
       'api::transport-price.transport-price': ApiTransportPriceTransportPrice;
       'api::transport-request.transport-request': ApiTransportRequestTransportRequest;
-      'api::villa.villa': ApiVillaVilla;
     }
   }
 }

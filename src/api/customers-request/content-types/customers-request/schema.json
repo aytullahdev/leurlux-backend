@@ -4,11 +4,11 @@
   "info": {
     "singularName": "customers-request",
     "pluralName": "customers-requests",
-    "displayName": "customers-request",
+    "displayName": "Customers request",
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {

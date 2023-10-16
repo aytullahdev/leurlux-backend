@@ -4,11 +4,11 @@
   "info": {
     "singularName": "supercar-request",
     "pluralName": "supercar-requests",
-    "displayName": "supercar-request",
+    "displayName": "Supercar Request",
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -62,6 +62,10 @@
       "default": "Pending"
     },
     "price": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
       "type": "string",
       "required": true
     }
