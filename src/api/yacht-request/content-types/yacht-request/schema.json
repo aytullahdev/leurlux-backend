@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "yacht_requests",
+  "info": {
+    "singularName": "yacht-request",
+    "pluralName": "yacht-requests",
+    "displayName": "Yacht Request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "yachtname": {
+      "type": "string",
+      "required": true
+    },
+    "season": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "bookdate": {
+      "required": true,
+      "type": "datetime"
+    }
+  }
+}

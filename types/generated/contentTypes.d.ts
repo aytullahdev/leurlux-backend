@@ -907,6 +907,41 @@ export interface ApiTransportRequestTransportRequest
   };
 }
 
+export interface ApiYachtRequestYachtRequest extends Schema.CollectionType {
+  collectionName: 'yacht_requests';
+  info: {
+    singularName: 'yacht-request';
+    pluralName: 'yacht-requests';
+    displayName: 'Yacht Request';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    yachtname: Attribute.String & Attribute.Required;
+    season: Attribute.String & Attribute.Required;
+    phone: Attribute.String & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    bookdate: Attribute.DateTime & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::yacht-request.yacht-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::yacht-request.yacht-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -929,6 +964,7 @@ declare module '@strapi/types' {
       'api::supercar-request.supercar-request': ApiSupercarRequestSupercarRequest;
       'api::transport-price.transport-price': ApiTransportPriceTransportPrice;
       'api::transport-request.transport-request': ApiTransportRequestTransportRequest;
+      'api::yacht-request.yacht-request': ApiYachtRequestYachtRequest;
     }
   }
 }
