@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hotel_requests",
+  "info": {
+    "singularName": "hotel-request",
+    "pluralName": "hotel-requests",
+    "displayName": "Hotel Request"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hotelname": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "otherrequest": {
+      "type": "text",
+      "required": true
+    },
+    "numberofguests": {
+      "type": "integer",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "arrival": {
+      "required": true,
+      "type": "datetime"
+    },
+    "departure": {
+      "required": true,
+      "type": "datetime"
+    }
+  }
+}

@@ -677,6 +677,44 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiApartmentRequestApartmentRequest
+  extends Schema.CollectionType {
+  collectionName: 'apartment_requests';
+  info: {
+    singularName: 'apartment-request';
+    pluralName: 'apartment-requests';
+    displayName: 'Apartment Request';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    apartmentname: Attribute.String & Attribute.Required;
+    arrival: Attribute.DateTime & Attribute.Required;
+    departure: Attribute.DateTime & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    phone: Attribute.String & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    price: Attribute.String & Attribute.Required;
+    otherrequest: Attribute.Text;
+    numberofguests: Attribute.Integer & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::apartment-request.apartment-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::apartment-request.apartment-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCustomersRequestCustomersRequest
   extends Schema.CollectionType {
   collectionName: 'customers_requests';
@@ -707,6 +745,42 @@ export interface ApiCustomersRequestCustomersRequest
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::customers-request.customers-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHotelRequestHotelRequest extends Schema.CollectionType {
+  collectionName: 'hotel_requests';
+  info: {
+    singularName: 'hotel-request';
+    pluralName: 'hotel-requests';
+    displayName: 'Hotel Request';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    hotelname: Attribute.String & Attribute.Required;
+    phone: Attribute.String & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    otherrequest: Attribute.Text & Attribute.Required;
+    numberofguests: Attribute.Integer & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    arrival: Attribute.DateTime & Attribute.Required;
+    departure: Attribute.DateTime & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hotel-request.hotel-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hotel-request.hotel-request',
       'oneToOne',
       'admin::user'
     > &
@@ -996,7 +1070,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::apartment-request.apartment-request': ApiApartmentRequestApartmentRequest;
       'api::customers-request.customers-request': ApiCustomersRequestCustomersRequest;
+      'api::hotel-request.hotel-request': ApiHotelRequestHotelRequest;
       'api::private-aircraft-request.private-aircraft-request': ApiPrivateAircraftRequestPrivateAircraftRequest;
       'api::supercar-collection.supercar-collection': ApiSupercarCollectionSupercarCollection;
       'api::supercar-request.supercar-request': ApiSupercarRequestSupercarRequest;

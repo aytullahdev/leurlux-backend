@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apartment_requests",
+  "info": {
+    "singularName": "apartment-request",
+    "pluralName": "apartment-requests",
+    "displayName": "Apartment Request"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "apartmentname": {
+      "type": "string",
+      "required": true
+    },
+    "arrival": {
+      "required": true,
+      "type": "datetime"
+    },
+    "departure": {
+      "required": true,
+      "type": "datetime"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "string",
+      "required": true
+    },
+    "otherrequest": {
+      "type": "text"
+    },
+    "numberofguests": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
