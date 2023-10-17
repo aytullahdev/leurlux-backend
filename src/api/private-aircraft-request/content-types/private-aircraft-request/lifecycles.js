@@ -4,19 +4,14 @@ module.exports = {
         try {
             await strapi.plugins['email'].services.email.send({
                 to: 'ayatullah7755@gmail.com',
-                subject: 'You have new Transport request',
+                subject: 'You have new Private Aircraft Request',
                 text: `Booking Information
                 Email: ${result.email}
                 Name: ${result.name}
                 Phone: ${result.phone}
-                Type : ${result.transporttype}
-                Pickup Address: ${result.pickupaddress}
-                Pickup Date: ${result.pickupdate}
-                Dropoff Address: ${result.dropoffaddress}
-                Dropoff Date: ${result.dropoffdate}
-                Number Of People: ${result.numberofpeople}
-                Number of Luggages: ${result.luggages}
-                Flight Number: ${result.flightnumber}
+                Fly From: ${result.flyfrom}
+                Fly To: ${result.flyto}
+                Fly Date: ${result.flydate}
                 Id: ${result.id}
                 `
 

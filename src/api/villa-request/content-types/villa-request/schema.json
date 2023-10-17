@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "villa_requests",
+  "info": {
+    "singularName": "villa-request",
+    "pluralName": "villa-requests",
+    "displayName": "Villa Request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "villaname": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "string",
+      "required": true
+    },
+    "arrival": {
+      "required": true,
+      "type": "datetime"
+    },
+    "departure": {
+      "required": true,
+      "type": "datetime"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "otherrequest": {
+      "type": "text"
+    },
+    "numberofguests": {
+      "required": true,
+      "type": "integer"
+    }
+  }
+}
