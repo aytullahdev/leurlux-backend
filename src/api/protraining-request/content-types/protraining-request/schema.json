@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "protraining_requests",
+  "info": {
+    "singularName": "protraining-request",
+    "pluralName": "protraining-requests",
+    "displayName": "Protraining Request"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "bookingdate": {
+      "required": true,
+      "type": "datetime"
+    },
+    "packagetype": {
+      "type": "string",
+      "required": true
+    },
+    "persons": {
+      "type": "integer",
+      "required": true
+    },
+    "otherrequest": {
+      "type": "text",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

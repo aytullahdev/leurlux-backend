@@ -826,6 +826,42 @@ export interface ApiPrivateAircraftRequestPrivateAircraftRequest
   };
 }
 
+export interface ApiProtrainingRequestProtrainingRequest
+  extends Schema.CollectionType {
+  collectionName: 'protraining_requests';
+  info: {
+    singularName: 'protraining-request';
+    pluralName: 'protraining-requests';
+    displayName: 'Protraining Request';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    email: Attribute.Email & Attribute.Required;
+    phone: Attribute.String & Attribute.Required;
+    bookingdate: Attribute.DateTime & Attribute.Required;
+    packagetype: Attribute.String & Attribute.Required;
+    persons: Attribute.Integer & Attribute.Required;
+    otherrequest: Attribute.Text & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::protraining-request.protraining-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::protraining-request.protraining-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSupercarCollectionSupercarCollection
   extends Schema.SingleType {
   collectionName: 'supercar_collections';
@@ -1074,6 +1110,7 @@ declare module '@strapi/types' {
       'api::customers-request.customers-request': ApiCustomersRequestCustomersRequest;
       'api::hotel-request.hotel-request': ApiHotelRequestHotelRequest;
       'api::private-aircraft-request.private-aircraft-request': ApiPrivateAircraftRequestPrivateAircraftRequest;
+      'api::protraining-request.protraining-request': ApiProtrainingRequestProtrainingRequest;
       'api::supercar-collection.supercar-collection': ApiSupercarCollectionSupercarCollection;
       'api::supercar-request.supercar-request': ApiSupercarRequestSupercarRequest;
       'api::transport-price.transport-price': ApiTransportPriceTransportPrice;
