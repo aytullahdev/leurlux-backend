@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "night_club_requests",
+  "info": {
+    "singularName": "night-club-request",
+    "pluralName": "night-club-requests",
+    "displayName": "Night Club Request"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "clubname": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "bookingdate": {
+      "required": true,
+      "type": "datetime"
+    },
+    "numberofguests": {
+      "type": "integer",
+      "required": true
+    },
+    "otherrequest": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

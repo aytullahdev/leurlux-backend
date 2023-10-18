@@ -788,6 +788,42 @@ export interface ApiHotelRequestHotelRequest extends Schema.CollectionType {
   };
 }
 
+export interface ApiNightClubRequestNightClubRequest
+  extends Schema.CollectionType {
+  collectionName: 'night_club_requests';
+  info: {
+    singularName: 'night-club-request';
+    pluralName: 'night-club-requests';
+    displayName: 'Night Club Request';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    clubname: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    phone: Attribute.String & Attribute.Required;
+    bookingdate: Attribute.DateTime & Attribute.Required;
+    numberofguests: Attribute.Integer & Attribute.Required;
+    otherrequest: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::night-club-request.night-club-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::night-club-request.night-club-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPrivateAircraftRequestPrivateAircraftRequest
   extends Schema.CollectionType {
   collectionName: 'private_aircraft_requests';
@@ -1109,6 +1145,7 @@ declare module '@strapi/types' {
       'api::apartment-request.apartment-request': ApiApartmentRequestApartmentRequest;
       'api::customers-request.customers-request': ApiCustomersRequestCustomersRequest;
       'api::hotel-request.hotel-request': ApiHotelRequestHotelRequest;
+      'api::night-club-request.night-club-request': ApiNightClubRequestNightClubRequest;
       'api::private-aircraft-request.private-aircraft-request': ApiPrivateAircraftRequestPrivateAircraftRequest;
       'api::protraining-request.protraining-request': ApiProtrainingRequestProtrainingRequest;
       'api::supercar-collection.supercar-collection': ApiSupercarCollectionSupercarCollection;
