@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "massage_requests",
+  "info": {
+    "singularName": "massage-request",
+    "pluralName": "massage-requests",
+    "displayName": "Massage Request"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "service": {
+      "type": "string",
+      "required": true
+    },
+    "numberofguests": {
+      "type": "integer",
+      "required": true
+    },
+    "bookingdate": {
+      "required": true,
+      "type": "datetime"
+    },
+    "otherrequest": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

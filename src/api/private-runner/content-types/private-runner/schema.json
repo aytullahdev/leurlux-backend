@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "private_runners",
+  "info": {
+    "singularName": "private-runner",
+    "pluralName": "private-runners",
+    "displayName": "Private Runner"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "pickupdate": {
+      "required": true,
+      "type": "datetime"
+    },
+    "otherrequest": {
+      "type": "text",
+      "required": true
+    },
+    "whattodo": {
+      "type": "text",
+      "required": true
+    },
+    "service": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

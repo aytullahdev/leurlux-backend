@@ -715,6 +715,42 @@ export interface ApiApartmentRequestApartmentRequest
   };
 }
 
+export interface ApiBeachclubRequestBeachclubRequest
+  extends Schema.CollectionType {
+  collectionName: 'beachclub_requests';
+  info: {
+    singularName: 'beachclub-request';
+    pluralName: 'beachclub-requests';
+    displayName: 'Beachclub Request';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    beachclub: Attribute.String & Attribute.Required;
+    bookingdate: Attribute.DateTime & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    phone: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    numberofguests: Attribute.Integer & Attribute.Required;
+    otherrequest: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::beachclub-request.beachclub-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::beachclub-request.beachclub-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCustomersRequestCustomersRequest
   extends Schema.CollectionType {
   collectionName: 'customers_requests';
@@ -781,6 +817,41 @@ export interface ApiHotelRequestHotelRequest extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::hotel-request.hotel-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMassageRequestMassageRequest extends Schema.CollectionType {
+  collectionName: 'massage_requests';
+  info: {
+    singularName: 'massage-request';
+    pluralName: 'massage-requests';
+    displayName: 'Massage Request';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    phone: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    service: Attribute.String & Attribute.Required;
+    numberofguests: Attribute.Integer & Attribute.Required;
+    bookingdate: Attribute.DateTime & Attribute.Required;
+    otherrequest: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::massage-request.massage-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::massage-request.massage-request',
       'oneToOne',
       'admin::user'
     > &
@@ -855,6 +926,41 @@ export interface ApiPrivateAircraftRequestPrivateAircraftRequest
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::private-aircraft-request.private-aircraft-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPrivateRunnerPrivateRunner extends Schema.CollectionType {
+  collectionName: 'private_runners';
+  info: {
+    singularName: 'private-runner';
+    pluralName: 'private-runners';
+    displayName: 'Private Runner';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    phone: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    pickupdate: Attribute.DateTime & Attribute.Required;
+    otherrequest: Attribute.Text & Attribute.Required;
+    whattodo: Attribute.Text & Attribute.Required;
+    service: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::private-runner.private-runner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::private-runner.private-runner',
       'oneToOne',
       'admin::user'
     > &
@@ -1179,10 +1285,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::apartment-request.apartment-request': ApiApartmentRequestApartmentRequest;
+      'api::beachclub-request.beachclub-request': ApiBeachclubRequestBeachclubRequest;
       'api::customers-request.customers-request': ApiCustomersRequestCustomersRequest;
       'api::hotel-request.hotel-request': ApiHotelRequestHotelRequest;
+      'api::massage-request.massage-request': ApiMassageRequestMassageRequest;
       'api::night-club-request.night-club-request': ApiNightClubRequestNightClubRequest;
       'api::private-aircraft-request.private-aircraft-request': ApiPrivateAircraftRequestPrivateAircraftRequest;
+      'api::private-runner.private-runner': ApiPrivateRunnerPrivateRunner;
       'api::protraining-request.protraining-request': ApiProtrainingRequestProtrainingRequest;
       'api::restaurant-request.restaurant-request': ApiRestaurantRequestRestaurantRequest;
       'api::supercar-collection.supercar-collection': ApiSupercarCollectionSupercarCollection;

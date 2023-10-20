@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "beachclub_requests",
+  "info": {
+    "singularName": "beachclub-request",
+    "pluralName": "beachclub-requests",
+    "displayName": "Beachclub Request"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "beachclub": {
+      "type": "string",
+      "required": true
+    },
+    "bookingdate": {
+      "required": true,
+      "type": "datetime"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "numberofguests": {
+      "type": "integer",
+      "required": true
+    },
+    "otherrequest": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
