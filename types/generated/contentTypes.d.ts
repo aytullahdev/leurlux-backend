@@ -722,6 +722,7 @@ export interface ApiBeachclubRequestBeachclubRequest
     singularName: 'beachclub-request';
     pluralName: 'beachclub-requests';
     displayName: 'Beachclub Request';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -733,7 +734,7 @@ export interface ApiBeachclubRequestBeachclubRequest
     phone: Attribute.String & Attribute.Required;
     email: Attribute.Email & Attribute.Required;
     numberofguests: Attribute.Integer & Attribute.Required;
-    otherrequest: Attribute.Text & Attribute.Required;
+    otherrequest: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -794,6 +795,7 @@ export interface ApiHotelRequestHotelRequest extends Schema.CollectionType {
     singularName: 'hotel-request';
     pluralName: 'hotel-requests';
     displayName: 'Hotel Request';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -802,7 +804,7 @@ export interface ApiHotelRequestHotelRequest extends Schema.CollectionType {
     hotelname: Attribute.String & Attribute.Required;
     phone: Attribute.String & Attribute.Required;
     name: Attribute.String & Attribute.Required;
-    otherrequest: Attribute.Text & Attribute.Required;
+    otherrequest: Attribute.Text;
     numberofguests: Attribute.Integer & Attribute.Required;
     email: Attribute.Email & Attribute.Required;
     arrival: Attribute.DateTime & Attribute.Required;
@@ -830,6 +832,7 @@ export interface ApiMassageRequestMassageRequest extends Schema.CollectionType {
     singularName: 'massage-request';
     pluralName: 'massage-requests';
     displayName: 'Massage Request';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -841,7 +844,7 @@ export interface ApiMassageRequestMassageRequest extends Schema.CollectionType {
     service: Attribute.String & Attribute.Required;
     numberofguests: Attribute.Integer & Attribute.Required;
     bookingdate: Attribute.DateTime & Attribute.Required;
-    otherrequest: Attribute.Text & Attribute.Required;
+    otherrequest: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -866,6 +869,7 @@ export interface ApiNightClubRequestNightClubRequest
     singularName: 'night-club-request';
     pluralName: 'night-club-requests';
     displayName: 'Night Club Request';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -877,7 +881,7 @@ export interface ApiNightClubRequestNightClubRequest
     phone: Attribute.String & Attribute.Required;
     bookingdate: Attribute.DateTime & Attribute.Required;
     numberofguests: Attribute.Integer & Attribute.Required;
-    otherrequest: Attribute.Text & Attribute.Required;
+    otherrequest: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -975,6 +979,7 @@ export interface ApiProtrainingRequestProtrainingRequest
     singularName: 'protraining-request';
     pluralName: 'protraining-requests';
     displayName: 'Protraining Request';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -985,7 +990,7 @@ export interface ApiProtrainingRequestProtrainingRequest
     bookingdate: Attribute.DateTime & Attribute.Required;
     packagetype: Attribute.String & Attribute.Required;
     persons: Attribute.Integer & Attribute.Required;
-    otherrequest: Attribute.Text & Attribute.Required;
+    otherrequest: Attribute.Text;
     name: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1011,6 +1016,7 @@ export interface ApiRestaurantRequestRestaurantRequest
     singularName: 'restaurant-request';
     pluralName: 'restaurant-requests';
     displayName: 'Restaurant Request';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -1022,7 +1028,7 @@ export interface ApiRestaurantRequestRestaurantRequest
     email: Attribute.Email & Attribute.Required;
     phone: Attribute.String & Attribute.Required;
     numberofguests: Attribute.Integer & Attribute.Required;
-    otherrequest: Attribute.Text & Attribute.Required;
+    otherrequest: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

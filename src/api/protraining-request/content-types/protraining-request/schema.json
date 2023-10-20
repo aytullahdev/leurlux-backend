@@ -4,7 +4,8 @@
   "info": {
     "singularName": "protraining-request",
     "pluralName": "protraining-requests",
-    "displayName": "Protraining Request"
+    "displayName": "Protraining Request",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -33,7 +34,7 @@
     },
     "otherrequest": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "name": {
       "type": "string",

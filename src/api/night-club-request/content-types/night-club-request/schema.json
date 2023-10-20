@@ -4,7 +4,8 @@
   "info": {
     "singularName": "night-club-request",
     "pluralName": "night-club-requests",
-    "displayName": "Night Club Request"
+    "displayName": "Night Club Request",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -37,7 +38,7 @@
     },
     "otherrequest": {
       "type": "text",
-      "required": true
+      "required": false
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "restaurant-request",
     "pluralName": "restaurant-requests",
-    "displayName": "Restaurant Request"
+    "displayName": "Restaurant Request",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -37,7 +38,7 @@
     },
     "otherrequest": {
       "type": "text",
-      "required": true
+      "required": false
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "hotel-request",
     "pluralName": "hotel-requests",
-    "displayName": "Hotel Request"
+    "displayName": "Hotel Request",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -25,7 +26,7 @@
     },
     "otherrequest": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "numberofguests": {
       "type": "integer",

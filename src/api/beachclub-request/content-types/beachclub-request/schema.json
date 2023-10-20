@@ -4,7 +4,8 @@
   "info": {
     "singularName": "beachclub-request",
     "pluralName": "beachclub-requests",
-    "displayName": "Beachclub Request"
+    "displayName": "Beachclub Request",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -37,7 +38,7 @@
     },
     "otherrequest": {
       "type": "text",
-      "required": true
+      "required": false
     }
   }
 }
