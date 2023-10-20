@@ -898,6 +898,42 @@ export interface ApiProtrainingRequestProtrainingRequest
   };
 }
 
+export interface ApiRestaurantRequestRestaurantRequest
+  extends Schema.CollectionType {
+  collectionName: 'restaurant_requests';
+  info: {
+    singularName: 'restaurant-request';
+    pluralName: 'restaurant-requests';
+    displayName: 'Restaurant Request';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    restaurant: Attribute.String & Attribute.Required;
+    bookingdate: Attribute.DateTime & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    phone: Attribute.String & Attribute.Required;
+    numberofguests: Attribute.Integer & Attribute.Required;
+    otherrequest: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::restaurant-request.restaurant-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::restaurant-request.restaurant-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSupercarCollectionSupercarCollection
   extends Schema.SingleType {
   collectionName: 'supercar_collections';
@@ -1148,6 +1184,7 @@ declare module '@strapi/types' {
       'api::night-club-request.night-club-request': ApiNightClubRequestNightClubRequest;
       'api::private-aircraft-request.private-aircraft-request': ApiPrivateAircraftRequestPrivateAircraftRequest;
       'api::protraining-request.protraining-request': ApiProtrainingRequestProtrainingRequest;
+      'api::restaurant-request.restaurant-request': ApiRestaurantRequestRestaurantRequest;
       'api::supercar-collection.supercar-collection': ApiSupercarCollectionSupercarCollection;
       'api::supercar-request.supercar-request': ApiSupercarRequestSupercarRequest;
       'api::transport-price.transport-price': ApiTransportPriceTransportPrice;

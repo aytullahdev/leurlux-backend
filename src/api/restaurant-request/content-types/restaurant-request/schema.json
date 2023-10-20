@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "restaurant_requests",
+  "info": {
+    "singularName": "restaurant-request",
+    "pluralName": "restaurant-requests",
+    "displayName": "Restaurant Request"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "restaurant": {
+      "type": "string",
+      "required": true
+    },
+    "bookingdate": {
+      "required": true,
+      "type": "datetime"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "numberofguests": {
+      "type": "integer",
+      "required": true
+    },
+    "otherrequest": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
