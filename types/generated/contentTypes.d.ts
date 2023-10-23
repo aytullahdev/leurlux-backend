@@ -1236,6 +1236,41 @@ export interface ApiTransportRequestTransportRequest
   };
 }
 
+export interface ApiVillaVilla extends Schema.CollectionType {
+  collectionName: 'villas';
+  info: {
+    singularName: 'villa';
+    pluralName: 'villas';
+    displayName: 'Villa';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    price: Attribute.Integer & Attribute.Required;
+    images: Attribute.Media & Attribute.Required;
+    beds: Attribute.Integer;
+    bathtube: Attribute.Integer;
+    details: Attribute.Text & Attribute.Required;
+    pdf: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::villa.villa',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::villa.villa',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiVillaRequestVillaRequest extends Schema.CollectionType {
   collectionName: 'villa_requests';
   info: {
@@ -1340,6 +1375,7 @@ declare module '@strapi/types' {
       'api::supercar-request.supercar-request': ApiSupercarRequestSupercarRequest;
       'api::transport-price.transport-price': ApiTransportPriceTransportPrice;
       'api::transport-request.transport-request': ApiTransportRequestTransportRequest;
+      'api::villa.villa': ApiVillaVilla;
       'api::villa-request.villa-request': ApiVillaRequestVillaRequest;
       'api::yacht-request.yacht-request': ApiYachtRequestYachtRequest;
     }
