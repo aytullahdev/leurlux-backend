@@ -677,6 +677,41 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiApartmentApartment extends Schema.CollectionType {
+  collectionName: 'apartments';
+  info: {
+    singularName: 'apartment';
+    pluralName: 'apartments';
+    displayName: 'apartment';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    price: Attribute.Integer & Attribute.Required;
+    images: Attribute.Media & Attribute.Required;
+    beds: Attribute.Integer & Attribute.Required;
+    bathtub: Attribute.Integer & Attribute.Required;
+    details: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::apartment.apartment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::apartment.apartment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiApartmentRequestApartmentRequest
   extends Schema.CollectionType {
   collectionName: 'apartment_requests';
@@ -1290,6 +1325,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::apartment.apartment': ApiApartmentApartment;
       'api::apartment-request.apartment-request': ApiApartmentRequestApartmentRequest;
       'api::beachclub-request.beachclub-request': ApiBeachclubRequestBeachclubRequest;
       'api::customers-request.customers-request': ApiCustomersRequestCustomersRequest;
