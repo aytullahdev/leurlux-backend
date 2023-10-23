@@ -4,7 +4,7 @@ module.exports = {
         try {
             await strapi.plugins['email'].services.email.send({
                 to: 'info@leurlux.com',
-                subject: 'You have new Protrainning  Service request',
+                subject: 'You have new Training  Service request',
                 text: `
                 Booking Information
                 Name: ${result.name}
