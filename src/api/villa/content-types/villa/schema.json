@@ -4,7 +4,8 @@
   "info": {
     "singularName": "villa",
     "pluralName": "villas",
-    "displayName": "Villa"
+    "displayName": "Villa",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -20,12 +21,12 @@
       "required": true
     },
     "images": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "beds": {
       "type": "integer"
@@ -39,6 +40,32 @@
     },
     "pdf": {
       "type": "string"
+    },
+    "guests": {
+      "type": "integer"
+    },
+    "bedrooms": {
+      "type": "integer"
+    },
+    "bathrooms": {
+      "type": "integer"
+    },
+    "about_villa": {
+      "type": "text"
+    },
+    "about_neighborhood": {
+      "type": "text"
+    },
+    "others": {
+      "type": "text"
+    },
+    "price_tag": {
+      "type": "enumeration",
+      "enum": [
+        "€/week",
+        "€/night"
+      ],
+      "default": "€/week"
     }
   }
 }

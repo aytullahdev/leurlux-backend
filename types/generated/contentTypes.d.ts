@@ -1242,6 +1242,7 @@ export interface ApiVillaVilla extends Schema.CollectionType {
     singularName: 'villa';
     pluralName: 'villas';
     displayName: 'Villa';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -1254,6 +1255,14 @@ export interface ApiVillaVilla extends Schema.CollectionType {
     bathtube: Attribute.Integer;
     details: Attribute.Text & Attribute.Required;
     pdf: Attribute.String;
+    guests: Attribute.Integer;
+    bedrooms: Attribute.Integer;
+    bathrooms: Attribute.Integer;
+    about_villa: Attribute.Text;
+    about_neighborhood: Attribute.Text;
+    others: Attribute.Text;
+    price_tag: Attribute.Enumeration<['\u20AC/week', '\u20AC/night']> &
+      Attribute.DefaultTo<'\u20AC/week'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
