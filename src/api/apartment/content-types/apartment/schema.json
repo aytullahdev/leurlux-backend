@@ -39,6 +39,32 @@
     "details": {
       "type": "text",
       "required": true
+    },
+    "guests": {
+      "type": "integer"
+    },
+    "bedrooms": {
+      "type": "integer"
+    },
+    "bathrooms": {
+      "type": "integer"
+    },
+    "about_penthouse": {
+      "type": "text"
+    },
+    "about_neighborhood": {
+      "type": "text"
+    },
+    "others": {
+      "type": "text"
+    },
+    "price_tag": {
+      "type": "enumeration",
+      "enum": [
+        "€/week",
+        "€/night"
+      ],
+      "default": "€/week"
     }
   }
 }

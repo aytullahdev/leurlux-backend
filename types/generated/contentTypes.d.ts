@@ -695,6 +695,14 @@ export interface ApiApartmentApartment extends Schema.CollectionType {
     beds: Attribute.Integer & Attribute.Required;
     bathtub: Attribute.Integer & Attribute.Required;
     details: Attribute.Text & Attribute.Required;
+    guests: Attribute.Integer;
+    bedrooms: Attribute.Integer;
+    bathrooms: Attribute.Integer;
+    about_penthouse: Attribute.Text;
+    about_neighborhood: Attribute.Text;
+    others: Attribute.Text;
+    price_tag: Attribute.Enumeration<['\u20AC/week', '\u20AC/night']> &
+      Attribute.DefaultTo<'\u20AC/week'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
