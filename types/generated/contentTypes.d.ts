@@ -758,6 +758,37 @@ export interface ApiApartmentRequestApartmentRequest
   };
 }
 
+export interface ApiBeachClubBeachClub extends Schema.CollectionType {
+  collectionName: 'beach_clubs';
+  info: {
+    singularName: 'beach-club';
+    pluralName: 'beach-clubs';
+    displayName: 'Beach Club';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    images: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::beach-club.beach-club',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::beach-club.beach-club',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBeachclubRequestBeachclubRequest
   extends Schema.CollectionType {
   collectionName: 'beachclub_requests';
@@ -832,6 +863,39 @@ export interface ApiCustomersRequestCustomersRequest
   };
 }
 
+export interface ApiHotelHotel extends Schema.CollectionType {
+  collectionName: 'hotels';
+  info: {
+    singularName: 'hotel';
+    pluralName: 'hotels';
+    displayName: 'Hotel';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    rating: Attribute.Float & Attribute.Required;
+    location: Attribute.String & Attribute.Required;
+    images: Attribute.Media & Attribute.Required;
+    sustainabilityLevel: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hotel.hotel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hotel.hotel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHotelRequestHotelRequest extends Schema.CollectionType {
   collectionName: 'hotel_requests';
   info: {
@@ -898,6 +962,37 @@ export interface ApiMassageRequestMassageRequest extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::massage-request.massage-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNightClubNightClub extends Schema.CollectionType {
+  collectionName: 'night_clubs';
+  info: {
+    singularName: 'night-club';
+    pluralName: 'night-clubs';
+    displayName: 'Night Club';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    images: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::night-club.night-club',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::night-club.night-club',
       'oneToOne',
       'admin::user'
     > &
@@ -1082,6 +1177,38 @@ export interface ApiRestaurantRequestRestaurantRequest
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::restaurant-request.restaurant-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRestaurantsAndDinnerRestaurantsAndDinner
+  extends Schema.CollectionType {
+  collectionName: 'restaurants_and_dinners';
+  info: {
+    singularName: 'restaurants-and-dinner';
+    pluralName: 'restaurants-and-dinners';
+    displayName: 'Restaurants And Dinner';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    images: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::restaurants-and-dinner.restaurants-and-dinner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::restaurants-and-dinner.restaurants-and-dinner',
       'oneToOne',
       'admin::user'
     > &
@@ -1379,15 +1506,19 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::apartment.apartment': ApiApartmentApartment;
       'api::apartment-request.apartment-request': ApiApartmentRequestApartmentRequest;
+      'api::beach-club.beach-club': ApiBeachClubBeachClub;
       'api::beachclub-request.beachclub-request': ApiBeachclubRequestBeachclubRequest;
       'api::customers-request.customers-request': ApiCustomersRequestCustomersRequest;
+      'api::hotel.hotel': ApiHotelHotel;
       'api::hotel-request.hotel-request': ApiHotelRequestHotelRequest;
       'api::massage-request.massage-request': ApiMassageRequestMassageRequest;
+      'api::night-club.night-club': ApiNightClubNightClub;
       'api::night-club-request.night-club-request': ApiNightClubRequestNightClubRequest;
       'api::private-aircraft-request.private-aircraft-request': ApiPrivateAircraftRequestPrivateAircraftRequest;
       'api::private-runner.private-runner': ApiPrivateRunnerPrivateRunner;
       'api::protraining-request.protraining-request': ApiProtrainingRequestProtrainingRequest;
       'api::restaurant-request.restaurant-request': ApiRestaurantRequestRestaurantRequest;
+      'api::restaurants-and-dinner.restaurants-and-dinner': ApiRestaurantsAndDinnerRestaurantsAndDinner;
       'api::supercar-collection.supercar-collection': ApiSupercarCollectionSupercarCollection;
       'api::supercar-request.supercar-request': ApiSupercarRequestSupercarRequest;
       'api::transport-price.transport-price': ApiTransportPriceTransportPrice;

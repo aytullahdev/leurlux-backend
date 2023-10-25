@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "night_clubs",
+  "info": {
+    "singularName": "night-club",
+    "pluralName": "night-clubs",
+    "displayName": "Night Club"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}
