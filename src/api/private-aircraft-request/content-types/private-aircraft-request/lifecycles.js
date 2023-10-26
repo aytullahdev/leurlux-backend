@@ -12,6 +12,7 @@ module.exports = {
                 Fly From: ${result.flyfrom}
                 Fly To: ${result.flyto}
                 Fly Date: ${result.flydate}
+                Other Request: ${result.otherrequest}
                 Id: ${result.id}
                 `
 

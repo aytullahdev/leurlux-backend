@@ -17,6 +17,7 @@ module.exports = {
                 Number Of People: ${result.numberofpeople}
                 Number of Luggages: ${result.luggages}
                 Flight Number: ${result.flightnumber}
+                Other Reqeust: ${result.otherrequest}
                 Id: ${result.id}
                 `
 
