@@ -4,7 +4,8 @@
   "info": {
     "singularName": "beach-club",
     "pluralName": "beach-clubs",
-    "displayName": "Beach Club"
+    "displayName": "Beach Club",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -20,12 +21,16 @@
       "required": true
     },
     "images": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "order": {
+      "type": "integer",
+      "default": 90
     }
   }
 }

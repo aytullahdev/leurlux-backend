@@ -703,6 +703,7 @@ export interface ApiApartmentApartment extends Schema.CollectionType {
     others: Attribute.Text;
     price_tag: Attribute.Enumeration<['\u20AC/week', '\u20AC/night']> &
       Attribute.DefaultTo<'\u20AC/week'>;
+    order: Attribute.Integer & Attribute.DefaultTo<90>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -764,6 +765,7 @@ export interface ApiBeachClubBeachClub extends Schema.CollectionType {
     singularName: 'beach-club';
     pluralName: 'beach-clubs';
     displayName: 'Beach Club';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -772,6 +774,7 @@ export interface ApiBeachClubBeachClub extends Schema.CollectionType {
     name: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     images: Attribute.Media & Attribute.Required;
+    order: Attribute.Integer & Attribute.DefaultTo<90>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -869,6 +872,7 @@ export interface ApiHotelHotel extends Schema.CollectionType {
     singularName: 'hotel';
     pluralName: 'hotels';
     displayName: 'Hotel';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -879,6 +883,7 @@ export interface ApiHotelHotel extends Schema.CollectionType {
     location: Attribute.String & Attribute.Required;
     images: Attribute.Media & Attribute.Required;
     sustainabilityLevel: Attribute.String & Attribute.Required;
+    order: Attribute.Integer & Attribute.DefaultTo<90>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -975,6 +980,7 @@ export interface ApiNightClubNightClub extends Schema.CollectionType {
     singularName: 'night-club';
     pluralName: 'night-clubs';
     displayName: 'Night Club';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -983,6 +989,7 @@ export interface ApiNightClubNightClub extends Schema.CollectionType {
     name: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     images: Attribute.Media & Attribute.Required;
+    order: Attribute.Integer & Attribute.DefaultTo<99>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1191,6 +1198,7 @@ export interface ApiRestaurantsAndDinnerRestaurantsAndDinner
     singularName: 'restaurants-and-dinner';
     pluralName: 'restaurants-and-dinners';
     displayName: 'Restaurants And Dinner';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -1199,6 +1207,7 @@ export interface ApiRestaurantsAndDinnerRestaurantsAndDinner
     name: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     images: Attribute.Media & Attribute.Required;
+    order: Attribute.Integer & Attribute.DefaultTo<90>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1398,6 +1407,7 @@ export interface ApiVillaVilla extends Schema.CollectionType {
     others: Attribute.Text;
     price_tag: Attribute.Enumeration<['\u20AC/week', '\u20AC/night']> &
       Attribute.DefaultTo<'\u20AC/week'>;
+    order: Attribute.Integer & Attribute.DefaultTo<30>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

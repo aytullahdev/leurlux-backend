@@ -4,7 +4,8 @@
   "info": {
     "singularName": "hotel",
     "pluralName": "hotels",
-    "displayName": "Hotel"
+    "displayName": "Hotel",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -24,16 +25,21 @@
       "required": true
     },
     "images": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "sustainabilityLevel": {
       "type": "string",
       "required": true
+    },
+    "order": {
+      "type": "integer",
+      "required": false,
+      "default": 90
     }
   }
 }

@@ -65,6 +65,10 @@
         "€/night"
       ],
       "default": "€/week"
+    },
+    "order": {
+      "type": "integer",
+      "default": 90
     }
   }
 }
