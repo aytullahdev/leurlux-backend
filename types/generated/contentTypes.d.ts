@@ -776,6 +776,7 @@ export interface ApiBeachClubBeachClub extends Schema.CollectionType {
     images: Attribute.Media & Attribute.Required;
     order: Attribute.Integer & Attribute.DefaultTo<90>;
     video: Attribute.Media;
+    videolink: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -991,6 +992,7 @@ export interface ApiNightClubNightClub extends Schema.CollectionType {
     description: Attribute.Text & Attribute.Required;
     images: Attribute.Media & Attribute.Required;
     order: Attribute.Integer & Attribute.DefaultTo<99>;
+    videolink: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
