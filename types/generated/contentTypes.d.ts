@@ -775,6 +775,7 @@ export interface ApiBeachClubBeachClub extends Schema.CollectionType {
     description: Attribute.Text & Attribute.Required;
     images: Attribute.Media & Attribute.Required;
     order: Attribute.Integer & Attribute.DefaultTo<90>;
+    video: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
