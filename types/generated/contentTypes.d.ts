@@ -1211,6 +1211,7 @@ export interface ApiRestaurantsAndDinnerRestaurantsAndDinner
     description: Attribute.Text & Attribute.Required;
     images: Attribute.Media & Attribute.Required;
     order: Attribute.Integer & Attribute.DefaultTo<90>;
+    videolink: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

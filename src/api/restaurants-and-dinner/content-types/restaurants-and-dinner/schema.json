@@ -31,6 +31,9 @@
     "order": {
       "type": "integer",
       "default": 90
+    },
+    "videolink": {
+      "type": "string"
     }
   }
 }
